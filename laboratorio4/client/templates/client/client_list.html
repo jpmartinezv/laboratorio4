@@ -1,0 +1,11 @@
+<h1>Client</h1>
+<ul>
+    {% for client in object_list %}
+    <li>{{ client.firstName }}  ({{ client.lastName }})
+    <a href="{% url 'client:client_edit' client.id %}">edit</a>
+    <a href="{% url 'client:client_delete' client.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'client:client_new' %}">New</a>
