@@ -1,0 +1,11 @@
+<h1>Account</h1>
+<ul>
+    {% for account in object_list %}
+    <li>{{ account.idClient.firstName }}
+    <a href="{% url 'account:account_edit' account.id %}">edit</a>
+    <a href="{% url 'account:account_delete' account.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'account:account_new' %}">New</a>
