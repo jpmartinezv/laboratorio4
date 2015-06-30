@@ -1,0 +1,34 @@
+<h1>Cliente</h1>
+<ul>
+    <h2>{{ client.firstName }}  {{ client.lastName }} </h2>
+    <li> DNI: {{ client.dni }}</li>
+    <li> Dirección: {{ client.address }}</li>
+    <li> Teléfono: {{ client.phone }}</li>
+    <li> Correo: {{ client.email }}</li>
+    <a href="{% url 'client:client_edit' client.id %}">Editar</a>
+    </br>
+    </br>
+    <li> Cuentas: </li>
+    <table border="1" style="width:60%">
+        <tr align="center">
+            <td>Id</td>
+            <td>Saldo</td>
+            <td>Estado</td>
+            <td colspan="2">Acciones</td>
+        </tr>
+        {% for account in accounts %}
+        <tr>
+            <td>{{ account.id }}</td>
+            <td>{{ account.amount }}</td>
+            {% if account.status == True %}
+                <td>Activo</td>
+            {% else %}
+                <td>Inactivo</td>
+            {% endif %}
+            <td><a href="{% url 'account:account_edit' account.id %}">Revisar</a></td>
+            <td><a href="{% url 'account:account_edit' account.id %}">Movimiento</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</ul>

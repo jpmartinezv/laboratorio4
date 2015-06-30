@@ -20,4 +20,6 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^client/', include('client.urls', namespace='client')),
     url(r'^account/', include('account.urls', namespace='account')),
+    url(r'^cashier/', include('cashier.urls', namespace='cashier')),
+    url(r'^transaction/', include('transaction.urls', namespace='transaction')),
 ]

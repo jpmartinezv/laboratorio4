@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'client',
     'account',
+    'cashier',
+    'transaction',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -1,0 +1,11 @@
+<h1>Movimientos</h1>
+<ul>
+    {% for transaction in object_list %}
+    <li>{{ transaction }}
+    <a href="{% url 'transaction:transaction_edit' transaction.id %}">edit</a>
+    <a href="{% url 'transaction:transaction_delete' transaction.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'transaction:transaction_new' %}">New</a>

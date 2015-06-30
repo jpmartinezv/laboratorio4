@@ -1,0 +1,11 @@
+<h1>Cajeros</h1>
+<ul>
+    {% for cashier in object_list %}
+    <li>{{ cashier.store }}
+    <a href="{% url 'cashier:cashier_edit' cashier.id %}">edit</a>
+    <a href="{% url 'cashier:cashier_delete' cashier.id %}">delete</a>
+    </li>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'cashier:cashier_new' %}">New</a>
